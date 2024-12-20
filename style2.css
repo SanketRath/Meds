@@ -15,6 +15,16 @@
   transform: translateX(-200%);
 }
 
+.wrapper.show-info .add-task-btn
+{
+  transform: translatex(-1000%);
+}
+
+.wrapper.show-info .wp-btn a
+{
+  right: 1rem;
+}
+
 
 .top-part .info-back-btn svg 
 {
@@ -70,4 +80,22 @@
 {
   visibility: hidden;
 }
+
+
+.wp-btn a
+{
+  position: absolute;
+  bottom: 1rem;
+  right: -4rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e3effc;
+  transition: all 0.3s;
+}
+
 

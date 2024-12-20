@@ -370,7 +370,7 @@ body {
 
 .add-task-btn.active {
     z-index: 1;
-    bottom: 31rem;
+    bottom: 29rem;
     transform: rotate(45deg);
 }
 
@@ -395,7 +395,6 @@ body {
 .add-task .heading {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    z-index: 1;
 }
 
 .input-group {
@@ -461,7 +460,7 @@ button.photo-btn {
     left: 50%;
     transform: translateX(-50%);
     width: 135%;
-    height: 35.5rem;
+    height: 30rem;
     border-radius: 50% 50% 0 0;
     background-color: #fff;
 }

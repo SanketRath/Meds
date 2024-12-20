@@ -18,33 +18,25 @@ let tasks = [
     id: 1,
     medicine: "Telmikind(BP)",
     category: "Regular",
-    time:"00.31",
     completed: "False",
-    phone: "1234567890"
   },
   {
     id: 2,
     medicine: "Pantop-D(acidity)",
     category: "Regular",
-    time:"12.31",
     completed: "False",
-    phone: "1234567890"
   },
   {
     id: 3,
     medicine: "Glycomed (Diabetes)",
     category: "Regular",
-    time:"15.31",
     completed: "False",
-    phone: "1234567890"
   },
   {
     id: 4,
     medicine: "Asthakind (Syrup)",
     category: "Regular",
-    time:"16.40",
     completed: "False",
-    phone: "1234567890"
   },
 
 ];
@@ -152,7 +144,9 @@ const renderTasks = () => {
       div.innerHTML = `
       <div class="btns">
                 <div class="med-info-btn">
-                  <a href="index2.html?id=${task.id}"><img src="info-btn.png" alt="info"></a>
+                  <img src="info-btn.png" alt="info" onclick="
+                  switchScreen()
+                  renderDetails()">
                 </div>
                 <div class="delete">
                   <svg
@@ -188,7 +182,7 @@ const renderTasks = () => {
                   />
                 </svg>
               </span>
-              <p>${task.medicine}</p>
+              <p>${task.task}</p>
         `;
       label.prepend(checkbox);
       div.prepend(label);
@@ -216,21 +210,17 @@ const toggleAddTaskForm = () => {
 
 const addTask = (e) => {
   e.preventDefault();
-  const medicine = taskInput.value;
+  const task = taskInput.value;
   const category = categorySelect.value;
-  const time = timeSelect.value;
-  const phone = phoneSelect.value;
 
-  if (medicine === "") {
+  if (task === "") {
     alert("Please enter a task");
   } else {
     const newTask = {
       id: tasks.length + 1,
-      medicine,
+      task,
       category,
-      time,
       completed: false,
-      phone
     };
     taskInput.value = "";
     tasks.push(newTask);
@@ -251,8 +241,6 @@ const numTasks = document.getElementById("num-tasks");
 const categoryTitle = document.getElementById("category-title");
 const categoryImg = document.getElementById("category-img");
 const categorySelect = document.getElementById("category-select");
-const timeSelect = document.getElementById("time");
-const phoneSelect = document.getElementById("phone-input");
 const addTaskWrapper = document.querySelector(".add-task");
 const addTaskBtn = document.querySelector(".add-task-btn");
 const taskInput = document.getElementById("task-input");
@@ -260,7 +248,6 @@ const blackBackdrop = document.querySelector(".black-backdrop");
 const addBtn = document.querySelector(".add-btn");
 const cancelBtn = document.querySelector(".cancel-btn");
 const totalTasks = document.getElementById("total-tasks");
-
 
 // Attach event listeners
 menuBtn.addEventListener("click", toggleScreen);
@@ -280,3 +267,7 @@ categories.forEach((category) => {
   categorySelect.appendChild(option);
 });
 
+///
+
+
+  
